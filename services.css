@@ -1,0 +1,142 @@
+/* services.css */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background: #f9faff;
+  color: #222;
+  line-height: 1.6;
+  min-height: 100dvh;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background:#002d72;
+  color: #fff;
+  flex-wrap: wrap;
+}
+.logo img {
+  height: 70px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap:20px;
+}
+
+nav ul li a {
+  color: #d1d8e0;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+  color: #82ccdd; /* lighter blue */
+  background-color: #1e3799; /* highlight bg */
+}
+
+.services-hero {
+  text-align: center;
+  margin: 40px 0 60px;
+}
+
+.services-hero h1 {
+  font-size: 2.8rem;
+  color: #0a3d62;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.services-hero p {
+  font-size: 1.2rem;
+  color: #575fcf; /* soft purple */
+  font-weight: 500;
+}
+
+.services-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto 60px;
+  padding: 0 15px;
+}
+
+.service-item {
+  background: #E8F0FF;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(10, 61, 98, 0.1);
+  padding: 25px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(10, 61, 98, 0.2);
+}
+
+.service-item h2 {
+  color: #0a3d62;
+  margin-bottom: 15px;
+  font-size: 1.6rem;
+  font-weight: 700;
+  border-bottom: 2px solid #82ccdd;
+  padding-bottom: 8px;
+}
+
+.service-item ul {
+  list-style: disc inside;
+  color: #444;
+  font-weight: 500;
+}
+
+.service-item ul li {
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
+footer {
+  background: #0a3d62;
+  color: #fff;
+  text-align: center;
+  padding: 1rem 0;
+  margin-top: auto;
+  font-size: 0.9rem;
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+  header {
+    justify-content: center;
+  }
+
+  nav ul {
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+
+  .services-hero h1 {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .services-list {
+    grid-template-columns: 1fr;
+  }
+
+  .services-hero p {
+    font-size: 1rem;
+  }
+}

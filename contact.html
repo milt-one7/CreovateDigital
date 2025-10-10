@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>CreovateDigital - Contact</title>
+<style>
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0; padding: 0;
+    background: #f9fafb;
+    color: #222;
+  }
+  header {
+  background-color: #002d72;
+  padding: 15px 20px;
+}
+
+/* Layout container */
+.header-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logo img {
+  height: 70px;
+  margin-bottom: 10px;
+}
+
+/* Navigation styling */
+nav ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px 20px;
+  padding: 0;
+}
+
+nav ul li a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 8px 12px;
+  border-radius: 4px;
+  transition: background 0.3s;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+  color: #82ccdd;
+}
+
+/* Larger screens */
+@media (min-width: 768px) {
+  .header-container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo {
+    margin-bottom: 0;
+  }
+
+  nav ul {
+    justify-content: flex-end;
+    gap: 25px;
+  }
+}
+  .contact {
+    background: linear-gradient(to right, #1a2a6c, #b21f1f, #fdbb2d);
+    color: white;
+    padding: 2rem 1rem;
+    text-align: center;
+  }
+  contact h1 {
+    margin: 0;
+  }
+  main {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+  }
+  .contact-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    justify-content: center;
+  }
+  .contact-item {
+    flex: 1 1 250px;
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    text-align: center;
+  }
+  .contact-item h3 {
+    margin-bottom: 0.5rem;
+    color: #002d72;
+  }
+  .contact-item a {
+    color: #0055cc;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  form {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    max-width: 600px;
+    margin: 0 auto 2rem auto;
+  }
+  form label {
+    display: block;
+    margin-bottom: 0.3rem;
+    font-weight: 600;
+  }
+  form input, form textarea {
+    width: 100%;
+    padding: 0.6rem 0.8rem;
+    margin-bottom: 1.2rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    resize: vertical;
+  }
+  form button {
+    background: #002d72;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  form button:hover {
+    background: #001f4d;
+  }
+  .map-container {
+    max-width: 900px;
+    margin: 0 auto 3rem auto;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  }
+  iframe {
+    width: 100%;
+    height: 300px;
+    border: none;
+  }
+  @media (max-width: 600px) {
+    .contact-info {
+      flex-direction: column;
+    }
+  }
+</style>
+</head>
+<body oncontextmenu="return false" onselectstart="return false" ondragstart="return false">
+
+<header>
+  <div class="header-container">
+    <div class="logo">
+      <img src="logo.png" alt="CreovateDigital Logo" />
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="courses.html" >Courses</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="testimonials.html">Testimonials</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+    </nav>
+  </div> 
+</header>
+<div class="contact">
+   <h1>Contact CreovateDigital</h1>
+  <p>We’re here to help — reach out anytime!</p>
+   
+</div>
+<main>
+  <div class="contact-info">
+    <div class="contact-item">
+      <h3>Email</h3>
+      <a href="mailto:creovatedigital@gmail.com">creovatedigital@gmail.com</a>
+    </div>
+    <div class="contact-item">
+      <h3>WhatsApp</h3>
+      <a href="https://wa.me/254796184049?text=I'm%20interested%20in%20your%20services" target="_blank" rel="noopener">+254 796 184 049</a>
+    </div>
+    <div class="contact-item">
+      <h3>Phone</h3>
+      <a href="tel:+254796184049">+254 796 184 049</a>
+    </div>
+  </div>
+
+  <form id="contactForm">
+     <label for="note">kindly use the above contact info to reach us,this form is currently experiencing technical issues ,it will be ready soon</label><br>
+    <label for="name">Full Name</label>
+    <input type="text" id="name" name="name" required placeholder="Your full name" />
+
+    <label for="email">Email Address</label>
+    <input type="email" id="email" name="email" required placeholder="Your email" />
+
+    <label for="message">Message</label>
+    <textarea id="message" name="message" rows="5" required placeholder="Your message"></textarea>
+
+    <button type="submit">Send Message</button>
+  </form>
+
+  <div class="map-container">
+    <iframe 
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15955.994505924717!2d36.79606454638634!3d-1.2920654627473436!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f10a23c0a04d3%3A0x92f3d5f1e92d6b47!2sNairobi!5e0!3m2!1sen!2ske!4v1687058912345!5m2!1sen!2ske" 
+      allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
+</main>
+
+<script>
+  document.getElementById('contactForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    alert('Thank you for contacting CreovateDigital! We will get back to you soon.');
+    this.reset();
+  });
+</script>
+
+</body>
+</html>

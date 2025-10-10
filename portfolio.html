@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CreovateDigital Portfolio</title>
+  <link rel="stylesheet" href="portfolio.css" />
+</head>
+<body oncontextmenu="return false" onselectstart="return false" ondragstart="return false">
+
+<header>
+  <img src="logo.png" alt="Creovate Digital Logo" />
+</header>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="about.html">About Us</a>
+  <a href="services.html">Services</a>
+  <a href="courses.html">Courses</a>
+  <a href="portfolio.html" class="active">Portfolio</a>
+  <a href="testimonials.html">Testimonials</a>
+  <a href="contact.html">Contact</a>
+</nav>
+
+<section class="portfolio-header">
+  <h1>Our Portfolio</h1>
+  <p>Explore some of our recent projects and creations</p>
+</section>
+
+<div class="filter-buttons">
+  <button data-filter="all">All</button>
+  <button data-filter="web">Web Design</button>
+  <button data-filter="graphics">Graphics</button>
+  <button data-filter="voice">Voice-over</button>
+</div>
+
+<main class="portfolio-items">
+
+  <article class="portfolio-item" data-category="web">
+    <img src="web.jpg" alt="Business Website Project" />
+    <div class="portfolio-info">
+      <h3>Business Website</h3>
+      <p>Custom WordPress website developed for a local business.</p>
+    </div>
+  </article>
+
+  <article class="portfolio-item" data-category="graphics">
+    <img src="startup.jpg" alt="Logo Design Project" />
+    <div class="portfolio-info">
+      <h3>Logo Design</h3>
+      <p>Creative branding and logo design for a startup.</p>
+    </div>
+  </article>
+
+  <article class="portfolio-item" data-category="voice">
+    <img src="one.jpg" alt="Voice-over Demo" />
+    <div class="portfolio-info">
+      <h3>Voice-over Demo</h3>
+      <p>Sample narration for YouTube and ads.</p>
+    </div>
+  </article>
+
+  <article class="portfolio-item" data-category="web">
+    <img src="courses.jpg" alt="E-commerce Website" />
+    <div class="portfolio-info">
+      <h3>E-commerce Website</h3>
+      <p>Online store built with WordPress WooCommerce.</p>
+    </div>
+  </article>
+  <article class="portfolio-item" data-category="web">
+    <img src="courses.jpg" alt="E-commerce Website" />
+    <div class="portfolio-info">
+      <h3>E-commerce Website</h3>
+      <p>Online store built with WordPress WooCommerce.</p>
+    </div>
+  </article>
+
+</main>
+
+<script>
+  const buttons = document.querySelectorAll('.filter-buttons button');
+  const items = document.querySelectorAll('.portfolio-item');
+
+  buttons.forEach(button => {
+    button.addEventListener('click', () => {
+      const filter = button.getAttribute('data-filter');
+
+      items.forEach(item => {
+        if (filter === 'all' || item.getAttribute('data-category') === filter) {
+        item.style.display = 'block';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+
+      buttons.forEach(btn => btn.classList.remove('active'));
+      button.classList.add('active');
+    });
+  });
+</script>
+<footer>
+    <p>&copy; 2025 CreovateDigital. All rights reserved.</p>
+  </footer>
+</body>
+</html>

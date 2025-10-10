@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>CreovateDigital - Testimonials</title>
+<style>
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0; padding: 0;
+    background: #f0f4f8;
+    color: #222;
+  }
+  
+header {
+  background-color: #002d72;
+  padding: 15px 20px;
+}
+
+/* Layout container */
+.header-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logo img {
+  height: 70px;
+  margin-bottom: 10px;
+}
+
+/* Navigation styling */
+nav ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px 20px;
+  padding: 0;
+}
+
+nav ul li a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 8px 12px;
+  border-radius: 4px;
+  transition: background 0.3s;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+  color: #82ccdd;
+}
+
+/* Larger screens */
+@media (min-width: 768px) {
+  .header-container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo {
+    margin-bottom: 0;
+  }
+
+  nav ul {
+    justify-content: flex-end;
+    gap: 25px;
+  }
+}
+
+
+ .client {
+ padding: 1.5rem 1rem;
+ background: linear-gradient(to right, #1a2a6c, #b21f1f, #fdbb2d);
+    margin: 0;
+    font-weight: 700;
+    text-align: center;
+    color: #fff;
+  }
+  
+  .client h1{
+     color: #fff;
+  }
+  main {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+  }
+  .testimonial-slider {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    background: white;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    padding: 2rem;
+  }
+  .testimonial {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: opacity 0.6s ease;
+  }
+  .testimonial.active {
+    display: flex;
+  }
+  .testimonial p {
+    font-style: italic;
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    color: #444;
+  }
+  .client-info {
+    font-weight: 600;
+    color: #002d72;
+  }
+  .client-role {
+    font-weight: 400;
+    color: #666;
+    font-size: 0.9rem;
+  }
+  .slider-controls {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.5rem;
+    gap: 1rem;
+  }
+  .slider-controls button {
+    background: #0055cc;
+    border: none;
+    color: white;
+    padding: 0.5rem 1rem;
+    font-weight: 600;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  .slider-controls button:hover {
+    background: #001f4d;
+  }
+  
+ 
+  @media (max-width: 600px) {
+    main {
+      margin: 1rem;
+    }
+    .testimonial p {
+      font-size: 1rem;
+    }
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="header-container">
+    <div class="logo">
+      <img src="logo.png" alt="CreovateDigital Logo" />
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="courses.html" >Courses</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="testimonials.html" class="active">Testimonials</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+</header>
+<div class="client"> 
+    <h1>What Our Clients Say</h1>
+  <p>Real feedback from our valued customers</p>
+</div>
+
+<main>
+  <div class="testimonial-slider">
+    <div class="testimonial active">
+      <p>"CreovateDigital transformed our website with amazing design and functionality. Highly recommended!"</p>
+      <div class="client-info">Amos Waithaka</div>
+      <div class="client-role">CEO, Tech Solutions</div>
+    </div>
+    <div class="testimonial">
+      <p>"Their online AI animation course was practical and fun. I learned so much and made stunning projects!"</p>
+      <div class="client-info">Mark Sen Arumba</div>
+      <div class="client-role">Freelance Animator</div>
+    </div>
+    <div class="testimonial">
+       <p>"Professional, responsive, and creative team. The voice-over services helped boost our marketing."</p>
+      <div class="client-info">Raydon Simiyu</div>
+      <div class="client-role">Marketing Manager, AdWorld</div>
+    </div>
+  </div>
+
+  <div class="slider-controls">
+    <button id="prevBtn">Previous</button>
+    <button id="nextBtn">Next</button>
+  </div>
+</main>
+
+<script>
+  const testimonials = document.querySelectorAll('.testimonial');
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
+  let currentIndex = 0;
+
+  function showTestimonial(index) {
+    testimonials.forEach((test, i) => {
+      test.classList.toggle('active', i === index);
+    });
+  }
+
+  prevBtn.addEventListener('click', () => {
+    currentIndex = (currentIndex - 1 + testimonials.length) % testimonials.length;
+    showTestimonial(currentIndex);
+  });
+
+  nextBtn.addEventListener('click', () => {
+    currentIndex = (currentIndex + 1) % testimonials.length;
+    showTestimonial(currentIndex);
+  });
+</script>
+
+</body>
+</html>

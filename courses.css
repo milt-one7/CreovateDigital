@@ -1,0 +1,144 @@
+/* Reset some default styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f5f7fa;
+  color: #333;
+  line-height: 1.6;
+  min-height: 100dvh;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background:#002d72;
+  padding: 15px 20px;
+  flex-wrap: wrap;
+}
+.logo img {
+  height: 70px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+  color: #82ccdd;
+}
+
+main.courses-container {
+  max-width: 900px;
+  margin: 2rem auto 4rem;
+  padding: 0 1rem;
+}
+
+main.courses-container h1 {
+  text-align: center;
+  margin-bottom: 0.5rem;
+  color: #0a3d62;
+}
+
+main.courses-container p {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+  color: #555;
+}
+
+.course {
+  background: #fff;
+  border-radius: 8px;
+  padding: 1.5rem 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 12px rgba(10, 61, 98, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.course:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(10, 61, 98, 0.15);
+}
+
+.course h2 {
+  color: #1e3799;
+  margin-bottom: 0.8rem;
+}
+
+.course ul {
+  margin-top: 1rem;
+  list-style: disc inside;
+  color: #444;
+}
+
+.enroll-info {
+  background: #0a3d62;
+  color: #fff;
+  text-align: center;
+  padding: 1.5rem 2rem;
+  border-radius: 8px;
+  font-size: 1.1rem;
+}
+
+.enroll-info a {
+  color: #82ccdd;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.enroll-info a:hover {
+  text-decoration: underline;
+}
+
+footer {
+  background: #0a3d62;
+  color: #fff;
+  text-align: center;
+  padding: 1rem 0;
+  margin-top: auto;
+  font-size: 0.9rem;
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+  header {
+    justify-content: center;
+  }
+
+  nav ul {
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+
+  . course h2 {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  . course {
+    grid-template-columns: 1fr;
+  }
+
+  . course p {
+    font-size: 1rem;
+  }
+}
